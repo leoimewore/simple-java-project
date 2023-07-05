@@ -47,7 +47,10 @@ pipeline{
 
         stage("Nexus Artifactory") {
             steps {
-                nexusArtifactUploader credentialsId: 'nexus', 
+                nexusArtifactUploader artifacts: [[artifactId: 'RegistrationApp',
+                classifier: '', file: 'target/works-with-heroku-1.0.war',
+                type: "war"]],
+                credentialsId: 'nexus',
                 groupId: 'works.buddy.samples', 
                 nexusUrl: '18.191.164.194:8081', 
                 nexusVersion: 'nexus2', 
