@@ -7,7 +7,7 @@ pipeline{
 
          stage("Git Delivery"){
             steps{
-                git 'https://github.com/leoimewore/simple-java-project.git'
+                git branch: "master" , url: 'https://github.com/leoimewore/simple-java-project'
             }
             
         }
