@@ -44,6 +44,19 @@ pipeline{
             }
         }
 
+
+        stage("Nexus Artifactory") {
+            steps {
+                nexusArtifactUploader credentialsId: 'nexus', 
+                groupId: 'works.buddy.samples', 
+                nexusUrl: '18.191.164.194:8081', 
+                nexusVersion: 'nexus2', 
+                protocol: 'http', 
+                repository: 'HerokuProject', 
+                version: '1.0'
+            }
+        }
+
         stage("Tomcat Deploy") {
 
             steps{
