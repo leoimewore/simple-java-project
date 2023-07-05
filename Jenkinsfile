@@ -51,7 +51,7 @@ pipeline{
                 deploy adapters: [tomcat9(credentialsId: 'tomcat', 
                 path: '', 
                 url: 'http://3.129.217.110')], 
-                contextPath: "mypath", 
+                contextPath: "reg", 
                 war: "**/*.war"
                 
             }
