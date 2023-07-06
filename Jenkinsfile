@@ -56,7 +56,7 @@ pipeline{
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
                 repository: 'HerokuProject', 
-                version: '1.0'
+                version: 'v1.$BUILD_NUMBER'
             }
         }
 
