@@ -45,20 +45,20 @@ pipeline{
         }
 
 
-        stage("Nexus Artifactory") {
-            steps {
-                nexusArtifactUploader artifacts: [[artifactId: 'works-with-heroku',
-                classifier: '', file: 'target/works-with-heroku-1.0.war',
-                type: "war"]],
-                credentialsId: 'nexus',
-                groupId: 'works.buddy.samples', 
-                nexusUrl: '18.191.164.194:8081', 
-                nexusVersion: 'nexus3', 
-                protocol: 'http', 
-                repository: 'HerokuProject', 
-                version: 'v1.$BUILD_NUMBER'
-            }
-        }
+        // stage("Nexus Artifactory") {
+        //     steps {
+        //         nexusArtifactUploader artifacts: [[artifactId: 'works-with-heroku',
+        //         classifier: '', file: 'target/works-with-heroku-1.0.war',
+        //         type: "war"]],
+        //         credentialsId: 'nexus',
+        //         groupId: 'works.buddy.samples', 
+        //         nexusUrl: '18.191.164.194:8081', 
+        //         nexusVersion: 'nexus3', 
+        //         protocol: 'http', 
+        //         repository: 'HerokuProject', 
+        //         version: 'v1.$BUILD_NUMBER'
+        //     }
+        // }
 
         stage("Tomcat Deploy") {
 
