@@ -73,7 +73,12 @@ pipeline{
             }
         }
     
-
+        post {
+            success{
+                emailext body: 'This project has successfully built and is ready to deploy', 
+                subject: 'Project Update', to: 'leoimewore@yahoo.com'
+            }
+        }
 
 
     }
