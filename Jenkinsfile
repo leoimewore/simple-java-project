@@ -66,28 +66,23 @@ pipeline{
 
                 deploy adapters: [tomcat9(credentialsId: 'tomcat', 
                 path: '', 
-                url: 'http://18.119.140.171:8080')], 
+                url: 'http://3.14.142.95:8080')], 
                 contextPath: "mypath", 
                 war: "**/*.war"
                 
             }
         }
     
-        post {
+
+    }
+    post {
             success{
-                emailext body: 'This project has successfully built and is ready to deploy', 
-                subject: 'Project Update', to: 'leoimewore@yahoo.com'
+                emailext body: 'This project has successfully built and is ready to deploy', subject: 'Project Update', to: 'leoimewore@yahoo.com'
             }
         }
 
 
-    }
-
-
         
-
-
- 
 
 
 }
