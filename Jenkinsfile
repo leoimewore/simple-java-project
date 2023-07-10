@@ -60,18 +60,18 @@ pipeline{
         //     }
         // }
 
-        stage("Tomcat Deploy") {
+        // stage("Tomcat Deploy") {
 
-            steps{
+        //     steps{
 
-                deploy adapters: [tomcat9(credentialsId: 'tomcat', 
-                path: '', 
-                url: 'http://3.14.142.95:8080')], 
-                contextPath: "mypath", 
-                war: "**/*.war"
+        //         deploy adapters: [tomcat9(credentialsId: 'tomcat', 
+        //         path: '', 
+        //         url: 'http://3.14.142.95:8080')], 
+        //         contextPath: "mypath", 
+        //         war: "**/*.war"
                 
-            }
-        }
+        //     }
+        // }
     
 
     }
